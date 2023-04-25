@@ -11,11 +11,11 @@ export default NextAuth({
       name: "credentials",
       credentials: {
         email: {
-          label: "Email",
+          label: "email",
           type: "text",
         },
         password: {
-          label: "Password",
+          label: "password",
           type: "password",
         },
       },
@@ -30,7 +30,7 @@ export default NextAuth({
           },
         });
 
-        if (!user || !user.hashedPassword) {
+        if (!user || !user?.hashedPassword) {
           throw new Error("Email does not exist");
         }
 
