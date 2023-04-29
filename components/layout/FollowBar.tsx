@@ -1,5 +1,5 @@
 import useUsers from "@/hooks/useUsers"
-import Avatar from "../modal/Avatar";
+import Avatar from "../Avatar";
 
 
 const FollowBar = () => {

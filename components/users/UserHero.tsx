@@ -1,6 +1,6 @@
 import Image from "next/image";
 import useUser from "@/hooks/useUser";
-import Avatar from "../modal/Avatar";
+import Avatar from "../Avatar";
 
 
 interface UserHeroProps{
