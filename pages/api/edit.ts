@@ -14,9 +14,10 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse){
          throw new Error("Missing Fields")
         }
 
-        const updateUser = await prisma.user.update({
+        const updatedUser = await prisma.user.update({
             where:{
                 id:currentUser.id
+                
             },
             data:{
                 name,
@@ -26,8 +27,8 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse){
                 coverImage
             }
         });
-
-        return res.status(200).json(updateUser)
+console.log(updatedUser)
+        return res.status(200).json(updatedUser)
 
     } catch (error) {
         console.log(error)    
