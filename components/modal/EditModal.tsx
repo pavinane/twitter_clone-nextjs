@@ -21,7 +21,7 @@ const EditModal = () => {
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [bio, setBio] = useState("");
-
+  
   useEffect(() => {
     
     setProfileImage(currentUser?.profileImage);
@@ -29,8 +29,9 @@ const EditModal = () => {
     setName(currentUser?.name);
     setUserName(currentUser?.username);
     setBio(currentUser?.bio);
-
+   
   }, [currentUser]);
+  console.log("user",currentUser)
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -38,9 +39,15 @@ const EditModal = () => {
 
     try {
         setIsLoading(true)
-        await axios.patch('/api/edit',{
-            name,username,bio,profileImage,coverImage
+        console.log("datas" ,name,username,bio,profileImage,coverImage)
+        await axios.patch("/api/edit", {
+          name,
+          username,
+          bio,
+          profileImage,
+          coverImage,
         });
+       
         mutateFetchedUser();
         toast.success("Updated");
         editModal.onClose()

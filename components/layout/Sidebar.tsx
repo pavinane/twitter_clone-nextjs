@@ -1,10 +1,10 @@
 import {BsHouseFill,BsBellFill} from 'react-icons/bs'
 import {FaUser} from 'react-icons/fa'
 import { signOut } from 'next-auth/react';
-import SidebarLogo from './SideBarLogo'
-import SidebarItem from './SidebarItem';
 import {BiLogOut} from 'react-icons/bi'
 import SidebarTweetButton from './SidebarTweetButton';
+import SidebarLogo from './SideBarLogo'
+import SidebarItem from './SidebarItem';
 import useCurrentUser from '@/hooks/useCurrentUser';
 
 
@@ -25,7 +25,7 @@ const Sidebar = () => {
     },
     {
       label:'Profile',
-      href:'/profile/123',
+      href:`/users/${currentUser?.id}`,
       icon:FaUser ,
       auth:true
     }
